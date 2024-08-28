@@ -43,7 +43,7 @@ func (s *SPLoadTestSuite) SetupSuite() {
 	s.BaseSuite.SetupSuite()
 	pwd, _ := os.Getwd()
 	usersFilePath := path.Join(pwd, usersFileName)
-	usersData := utils.GetParamFromCSV(usersFilePath, false)
+	usersData := utils.GetParamFromCSV(usersFilePath, true)
 	userCount := config.CfgEnv.NumUsers
 	//More than 100 can cause long loading times
 	if userCount > 100 {
